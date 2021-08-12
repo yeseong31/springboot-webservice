@@ -1,6 +1,6 @@
 package com.yeseong.book.springboot.web;
 
-// 이후 배푸 시 8081을 쓸지, 8082를 쓸지를 판단하는 기준을 함
+// 이후 배포 시 8081을 쓸지, 8082를 쓸지를 판단하는 기준을 함
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.env.Environment;
