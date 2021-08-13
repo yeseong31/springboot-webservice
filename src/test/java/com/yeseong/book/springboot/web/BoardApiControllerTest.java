@@ -4,10 +4,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.yeseong.book.springboot.domain.board.Board;
 import com.yeseong.book.springboot.domain.board.BoardRepository;
 import com.yeseong.book.springboot.web.dto.BoardSaveRequestDto;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
@@ -17,7 +17,7 @@ import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.util.List;
 
@@ -26,7 +26,7 @@ import static org.springframework.security.test.web.servlet.setup.SecurityMockMv
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@RunWith(SpringRunner.class)
+@ExtendWith(SpringExtension.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class BoardApiControllerTest {
 
@@ -44,7 +44,7 @@ public class BoardApiControllerTest {
 
     private MockMvc mvc;
 
-    @Before                 // (1)
+    @BeforeEach                 // (1)
     public void setup() {
         mvc = MockMvcBuilders
                 .webAppContextSetup(context)
@@ -52,7 +52,7 @@ public class BoardApiControllerTest {
                 .build();
     }
 
-    @After
+    @AfterEach
     public void tearDown() throws Exception {
         boardRepository.deleteAll();
     }
