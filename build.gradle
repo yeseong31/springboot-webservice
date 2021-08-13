@@ -26,6 +26,10 @@ repositories {
 }
 
 dependencies {
+    // POI
+    implementation group: 'org.apache.poi', name: 'poi', version: '5.0.0'
+    implementation group: 'org.apache.poi', name: 'poi-ooxml', version: '5.0.0'
+
     compile("org.mariadb.jdbc:mariadb-java-client")
     compile('org.springframework.security:spring-security-test')
     compile('org.springframework.session:spring-session-jdbc')
