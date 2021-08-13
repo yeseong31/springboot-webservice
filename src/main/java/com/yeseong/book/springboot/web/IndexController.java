@@ -32,8 +32,11 @@ public class IndexController {
     }
 
     @GetMapping("/")
-    public String list(Model model) {
+    public String list(Model model, @LoginUser SessionUser user) {
         model.addAttribute("board", boardService.findAll());
+        if (user != null) {
+            model.addAttribute("userName", user.getName());
+        }
         return "list";
     }
 
