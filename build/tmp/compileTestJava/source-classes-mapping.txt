@@ -1,0 +1,20 @@
+com/yeseong/book/springboot/domain/posts/PostRepositoryTest.java
+ com.yeseong.book.springboot.domain.posts.PostRepositoryTest
+com/yeseong/book/springboot/domain/posts/BoardRepositoryTest.java
+ com.yeseong.book.springboot.domain.posts.BoardRepositoryTest
+com/yeseong/book/springboot/web/HelloControllerTest.java
+ com.yeseong.book.springboot.web.HelloControllerTest
+com/yeseong/book/springboot/web/ListControllerTest.java
+ com.yeseong.book.springboot.web.ListControllerTest
+com/yeseong/book/springboot/web/dto/HelloResponseDtoTest.java
+ com.yeseong.book.springboot.web.dto.HelloResponseDtoTest
+com/yeseong/book/springboot/web/IndexControllerTest.java
+ com.yeseong.book.springboot.web.IndexControllerTest
+com/yeseong/book/springboot/web/BoardApiControllerTest.java
+ com.yeseong.book.springboot.web.BoardApiControllerTest
+com/yeseong/book/springboot/web/ProfileControllerTest.java
+ com.yeseong.book.springboot.web.ProfileControllerTest
+com/yeseong/book/springboot/web/PostsApiControllerTest.java
+ com.yeseong.book.springboot.web.PostsApiControllerTest
+com/yeseong/book/springboot/web/ProfileControllerUnitTest.java
+ com.yeseong.book.springboot.web.ProfileControllerUnitTest
