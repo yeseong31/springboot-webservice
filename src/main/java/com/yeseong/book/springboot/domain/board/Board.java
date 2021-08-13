@@ -43,18 +43,25 @@ public class Board extends BaseTimeEntity {
 
 
     // 전용면적
+    @Column(nullable = true)
     private double dedicatedArea;
     // 계약년월
+    @Column(nullable = true)
     private int contractYearMonth;
     // 계약일
+    @Column(nullable = true)
     private int contractDay;
     // 거래금액
+    @Column(nullable = true)
     private int transactionAmount;
     // 층
+    @Column(nullable = true)
     private int floor;
     // 건축년도
+    @Column(nullable = true)
     private int buildingYear;
     // 해제사유발생일
+    @Column(nullable = true)
     private int rrod;
 
     @Builder

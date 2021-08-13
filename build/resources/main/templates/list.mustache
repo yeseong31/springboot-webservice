@@ -1,11 +1,10 @@
-{{>../layout/header}}
+{{>layout/header}}
 
-<h1>오라클 DB 출력 테스트</h1>
+<h1>springboot-webservice TEST...ing</h1>
 <div class="col-md-12">
     <!-- 로그인 기능 영역 -->
     <div class="row">
         <div class="col-md-6">
-            <!--<a href="/posts/save" role="button" class="btn btn-primary">글 등록</a>-->
             {{#userName}}
                 Logged in as: <span id="user">{{userName}}</span>
                 <a href="/logout" class="btn btn-info active" role="button">Logout</a>
@@ -23,43 +22,45 @@
     <table class="table table-horizontal table-bordered">
         <thead class="thead-strong">
         <tr>
-            <th>번호</th>     <!-- id -->
-            <th>시군구</th>     <!-- ccd -->
-            <th>번지</th>     <!-- houseNum -->
-            <th>본번</th>     <!-- mainNum -->
-            <th>부번</th>     <!-- secondaryNum -->
-            <th>단지명</th>     <!-- complexName -->
-            <th>전용면적</th>     <!-- dedicatedArea -->
-            <th>계약년월</th>     <!-- contractYearMonth -->
-            <th>계약일</th>     <!-- contractDay -->
-            <th>거래금액</th>     <!-- transactionAmount -->
-            <th>층</th>     <!-- floor -->
-            <th>건축년도</th>     <!-- buildingYear -->
-            <th>도로명</th>     <!-- roadName -->
-            <th>해제사유발생일</th>     <!-- rrod -->
+            <th>번호</th>
+            <th>시군구</th>
+            <th>번지</th>
+            <th>본번</th>
+            <th>부번</th>
+            <th>단지명</th>
+            <th>도로명</th>
+            <th>전용면적</th>
+            <th>계약년월</th>
+            <th>계약일</th>
+            <th>거래금액</th>
+            <th>층</th>
+            <th>건축년도</th>
+            <th>해제사유발생일</th>
+            <th>최종수정일</th>
         </tr>
         </thead>
         <tbody id="tbody">
         {{#board}}
             <tr>
                 <td>{{id}}</td>
-                <td>{{ccd}}</td>
+                <td>{{ccd}}</a></td>
                 <td>{{houseNum}}</td>
                 <td>{{mainNum}}</td>
                 <td>{{secondaryNum}}</td>
-                <td>{{complexName}}</td>
+                <td>{{complexName}}</a></td>
+                <td>{{roadname}}</td>
                 <td>{{dedicatedArea}}</td>
                 <td>{{contractYearMonth}}</td>
-                <td>{{contractDay}}</td>
+                <td>{{contractDay}}</a></td>
                 <td>{{transactionAmount}}</td>
                 <td>{{floor}}</td>
                 <td>{{buildingYear}}</td>
-                <td>{{roadName}}</td>
-                <td>{{rrod}}</td>
+                <td>{{rrod}}</a></td>
+                <td>{{modifiedDate}}</td>
             </tr>
         {{/board}}
         </tbody>
     </table>
 </div>
 
-{{>../layout/footer}}
+{{>layout/footer}}
