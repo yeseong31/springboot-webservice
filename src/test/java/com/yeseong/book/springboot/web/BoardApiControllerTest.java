@@ -67,7 +67,7 @@ public class BoardApiControllerTest {
         String secondaryNum = "secondaryNum";
         String complexName = "complexName";
         String roadName = "roadName";
-        int dedicatedArea = 100;
+        double dedicatedArea = 100.0;
         int contractYearMonth = 199807;
         int contractDay = 31;
         int transactionAmount = 100;

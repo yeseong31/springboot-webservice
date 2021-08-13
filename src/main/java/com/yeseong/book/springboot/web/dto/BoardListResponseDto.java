@@ -4,21 +4,18 @@ import com.yeseong.book.springboot.domain.board.Board;
 import com.yeseong.book.springboot.domain.posts.Posts;
 import lombok.Getter;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import java.time.LocalDateTime;
 
 @Getter
-public class BoardResponseDto {
+public class BoardListResponseDto {
 
     private Long id;
-
     private String ccd, houseNum, mainNum, secondaryNum, complexName, roadName;
     private int contractYearMonth, contractDay, transactionAmount, floor, buildingYear, rrod;
     private double dedicatedArea;
+    private LocalDateTime modifiedDate;
 
-    public BoardResponseDto(Board entity) {
+    public BoardListResponseDto(Board entity) {
         this.id = entity.getId();
         this.ccd = entity.getCcd();
         this.houseNum = entity.getHouseNum();
@@ -33,6 +30,7 @@ public class BoardResponseDto {
         this.buildingYear = entity.getBuildingYear();
         this.roadName = entity.getRoadName();
         this.rrod = entity.getRrod();
+        this.modifiedDate = entity.getModifiedDate();
     }
 
 }

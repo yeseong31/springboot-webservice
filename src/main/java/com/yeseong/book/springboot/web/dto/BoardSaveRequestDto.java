@@ -10,11 +10,12 @@ import lombok.NoArgsConstructor;
 public class BoardSaveRequestDto {
 
     private String ccd, houseNum, mainNum, secondaryNum, complexName, roadName;
-    private int dedicatedArea, contractYearMonth, contractDay, transactionAmount, floor, buildingYear, rrod;
+    private int contractYearMonth, contractDay, transactionAmount, floor, buildingYear, rrod;
+    private double dedicatedArea;
 
     @Builder
     public BoardSaveRequestDto(String ccd, String houseNum, String mainNum, String secondaryNum, String complexName,
-                                    int dedicatedArea, int contractYearMonth, int contractDay, int transactionAmount,
+                                    double dedicatedArea, int contractYearMonth, int contractDay, int transactionAmount,
                                     int floor, int buildingYear, String roadName, int rrod) {
         this.ccd = ccd;
         this.houseNum = houseNum;

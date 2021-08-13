@@ -43,7 +43,7 @@ public class Board extends BaseTimeEntity {
 
 
     // 전용면적
-    private int dedicatedArea;
+    private double dedicatedArea;
     // 계약년월
     private int contractYearMonth;
     // 계약일
@@ -59,7 +59,7 @@ public class Board extends BaseTimeEntity {
 
     @Builder
     public Board(String ccd, String houseNum, String mainNum, String secondaryNum, String complexName,
-                 int dedicatedArea, int contractYearMonth, int contractDay, int transactionAmount,
+                 double dedicatedArea, int contractYearMonth, int contractDay, int transactionAmount,
                  int floor, int buildingYear, String roadName, int rrod) {
         this.ccd = ccd;
         this.houseNum = houseNum;

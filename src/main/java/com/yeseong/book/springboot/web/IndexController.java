@@ -2,6 +2,7 @@ package com.yeseong.book.springboot.web;
 
 import com.yeseong.book.springboot.config.auth.LoginUser;
 import com.yeseong.book.springboot.config.auth.dto.SessionUser;
+import com.yeseong.book.springboot.service.board.BoardService;
 import com.yeseong.book.springboot.service.posts.PostsService;
 import com.yeseong.book.springboot.web.dto.PostsResponseDto;
 import lombok.RequiredArgsConstructor;
@@ -17,8 +18,9 @@ import javax.servlet.http.HttpSession;
 public class IndexController {
 
     private final PostsService postsService;
+    private final BoardService boardService;
 
-    @GetMapping("/")
+    // @GetMapping("/")
     public String index(Model model, @LoginUser SessionUser user) {
         model.addAttribute("posts", postsService.findAllDesc());
 
@@ -27,6 +29,12 @@ public class IndexController {
         }
 
         return "index";
+    }
+
+    @GetMapping("/")
+    public String list(Model model) {
+        model.addAttribute("board", boardService.findAll());
+        return "list";
     }
 
     @GetMapping("/posts/save")
