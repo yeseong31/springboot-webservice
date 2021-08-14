@@ -10,6 +10,7 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor
 @Entity
+@Table(name = "board")
 public class Board extends BaseTimeEntity {
 
     // 번호
@@ -37,29 +38,22 @@ public class Board extends BaseTimeEntity {
     @Column(length = 100)
     private String complexName;
 
+    // 전용면적
+    private double dedicatedArea;
+    // 계약년월
+    private int contractYearMonth;
+    // 계약일
+    private int contractDay;
+    // 거래금액
+    private int transactionAmount;
+    // 층
+    private int floor;
+    // 건축년도
+    private int buildingYear;
+
     // 도로명
     @Column(length = 100)
     private String roadName;
-
-
-    // 전용면적
-    @Column(nullable = true)
-    private double dedicatedArea;
-    // 계약년월
-    @Column(nullable = true)
-    private int contractYearMonth;
-    // 계약일
-    @Column(nullable = true)
-    private int contractDay;
-    // 거래금액
-    @Column(nullable = true)
-    private int transactionAmount;
-    // 층
-    @Column(nullable = true)
-    private int floor;
-    // 건축년도
-    @Column(nullable = true)
-    private int buildingYear;
     // 해제사유발생일
     @Column(nullable = true)
     private int rrod;
