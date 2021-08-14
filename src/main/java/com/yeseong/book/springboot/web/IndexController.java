@@ -20,7 +20,7 @@ public class IndexController {
     private final PostsService postsService;
     private final BoardService boardService;
 
-    // @GetMapping("/")
+    @GetMapping("/")
     public String index(Model model, @LoginUser SessionUser user) {
         model.addAttribute("posts", postsService.findAllDesc());
 
@@ -31,7 +31,7 @@ public class IndexController {
         return "index";
     }
 
-    @GetMapping("/")
+    @GetMapping("/board")
     public String list(Model model, @LoginUser SessionUser user) {
         model.addAttribute("board", boardService.findAll());
         if (user != null) {

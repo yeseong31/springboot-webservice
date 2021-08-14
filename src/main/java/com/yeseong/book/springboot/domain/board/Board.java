@@ -10,7 +10,6 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor
 @Entity
-@Table(name = "board")
 public class Board extends BaseTimeEntity {
 
     // 번호
