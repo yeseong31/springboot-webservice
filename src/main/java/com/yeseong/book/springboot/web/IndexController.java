@@ -56,7 +56,8 @@ public class IndexController {
         model.addAttribute("board", boardService.getBoardList(pageable));
         model.addAttribute("previous", pageable.previousOrFirst().getPageNumber());
         model.addAttribute("next", pageable.next().getPageNumber());
-        model.addAttribute("check", boardService.getListCheck(pageable));
+        model.addAttribute("checkNext", boardService.getListCheckNext(pageable));
+        model.addAttribute("checkPrev", boardService.getListCheckPrev(pageable));
 
         if (user != null) {
             model.addAttribute("userName", user.getName());

@@ -49,9 +49,15 @@ public class BoardService {
     }
     // 마지막 페이지일 경우 'Next' 버튼 비활성화
     @Transactional
-    public Boolean getListCheck(Pageable pageable) {
+    public Boolean getListCheckNext(Pageable pageable) {
         Page<Board> saved = getBoardList(pageable);
         return saved.hasNext();
+    }
+    // 첫 페이지일 경우 'Previous' 버튼 비활성화
+    @Transactional
+    public Boolean getListCheckPrev(Pageable pageable) {
+        Page<Board> saved = getBoardList(pageable);
+        return saved.hasPrevious();
     }
 
 }

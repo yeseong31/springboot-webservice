@@ -62,13 +62,18 @@
     </table>
 
     <ul class="pagination justify-content-center">
-        <li class="page-item"><a class="page-link" href="?page={{previous}}">Previous</a></li>
-        {{#check}}
+        {{#checkPrev}}
+            <li class="page-item"><a class="page-link" href="?page={{previous}}">Previous</a></li>
+        {{/checkPrev}}
+        {{^checkPrev}}
+            <li class="page-item disabled"><a class="page-link" href="?page={{previous}}">Previous</a></li>
+        {{/checkPrev}}
+        {{#checkNext}}
             <li class="page-item"><a class="page-link" href="?page={{next}}">Next</a></li>
-        {{/check}}
-        {{^check}}
+        {{/checkNext}}
+        {{^checkNext}}
             <li class="page-item disabled"><a class="page-link" href="?page={{next}}">Next</a></li>
-        {{/check}}
+        {{/checkNext}}
     </ul>
 </div>
 
