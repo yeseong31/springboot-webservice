@@ -9,8 +9,9 @@ import javax.persistence.*;
 
 @Getter
 @NoArgsConstructor
+@Table(name = "board")
 @Entity
-public class Board extends BaseTimeEntity {
+public class Board {
 
     // 번호
     @Id

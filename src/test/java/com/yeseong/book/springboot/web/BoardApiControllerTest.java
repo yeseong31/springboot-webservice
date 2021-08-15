@@ -99,18 +99,19 @@ public class BoardApiControllerTest {
 
         // then
         List<Board> all = boardRepository.findAll();
-        assertThat(all.get(0).getCcd()).isEqualTo(ccd);
-        assertThat(all.get(0).getHouseNum()).isEqualTo(houseNum);
-        assertThat(all.get(0).getMainNum()).isEqualTo(mainNum);
-        assertThat(all.get(0).getSecondaryNum()).isEqualTo(secondaryNum);
-        assertThat(all.get(0).getComplexName()).isEqualTo(complexName);
-        assertThat(all.get(0).getRoadName()).isEqualTo(roadName);
-        assertThat(all.get(0).getDedicatedArea()).isEqualTo(dedicatedArea);
-        assertThat(all.get(0).getContractYearMonth()).isEqualTo(contractYearMonth);
-        assertThat(all.get(0).getContractDay()).isEqualTo(contractDay);
-        assertThat(all.get(0).getTransactionAmount()).isEqualTo(transactionAmount);
-        assertThat(all.get(0).getFloor()).isEqualTo(floor);
-        assertThat(all.get(0).getBuildingYear()).isEqualTo(buildingYear);
+        int idx = all.size() - 1;
+        assertThat(all.get(idx).getCcd()).isEqualTo(ccd);
+        assertThat(all.get(idx).getHouseNum()).isEqualTo(houseNum);
+        assertThat(all.get(idx).getMainNum()).isEqualTo(mainNum);
+        assertThat(all.get(idx).getSecondaryNum()).isEqualTo(secondaryNum);
+        assertThat(all.get(idx).getComplexName()).isEqualTo(complexName);
+        assertThat(all.get(idx).getRoadName()).isEqualTo(roadName);
+        assertThat(all.get(idx).getDedicatedArea()).isEqualTo(dedicatedArea);
+        assertThat(all.get(idx).getContractYearMonth()).isEqualTo(contractYearMonth);
+        assertThat(all.get(idx).getContractDay()).isEqualTo(contractDay);
+        assertThat(all.get(idx).getTransactionAmount()).isEqualTo(transactionAmount);
+        assertThat(all.get(idx).getFloor()).isEqualTo(floor);
+        assertThat(all.get(idx).getBuildingYear()).isEqualTo(buildingYear);
     }
 
 }

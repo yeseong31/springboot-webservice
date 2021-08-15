@@ -30,7 +30,6 @@ public class BoardListResponseDto {
         this.buildingYear = entity.getBuildingYear();
         this.roadName = entity.getRoadName();
         this.rrod = entity.getRrod();
-        this.modifiedDate = entity.getModifiedDate();
     }
 
 }
