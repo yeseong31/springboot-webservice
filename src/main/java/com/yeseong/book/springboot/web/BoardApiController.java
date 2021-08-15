@@ -1,11 +1,15 @@
 package com.yeseong.book.springboot.web;
 
 import com.yeseong.book.springboot.domain.BaseTimeEntity;
+import com.yeseong.book.springboot.domain.board.Board;
 import com.yeseong.book.springboot.service.board.BoardService;
 import com.yeseong.book.springboot.web.dto.BoardResponseDto;
 import com.yeseong.book.springboot.web.dto.BoardSaveRequestDto;
 import lombok.RequiredArgsConstructor;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
@@ -22,5 +26,6 @@ public class BoardApiController extends BaseTimeEntity {
     public BoardResponseDto findById(@PathVariable Long id) {
         return boardService.findById(id);
     }
+
 
 }

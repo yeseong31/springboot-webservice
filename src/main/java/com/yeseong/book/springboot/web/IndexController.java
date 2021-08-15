@@ -2,16 +2,21 @@ package com.yeseong.book.springboot.web;
 
 import com.yeseong.book.springboot.config.auth.LoginUser;
 import com.yeseong.book.springboot.config.auth.dto.SessionUser;
+import com.yeseong.book.springboot.domain.board.Board;
 import com.yeseong.book.springboot.service.board.BoardService;
 import com.yeseong.book.springboot.service.posts.PostsService;
 import com.yeseong.book.springboot.web.dto.PostsResponseDto;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 @RequiredArgsConstructor
 @Controller
@@ -31,15 +36,6 @@ public class IndexController {
         return "index";
     }
 
-    @GetMapping("/")
-    public String list(Model model, @LoginUser SessionUser user) {
-        model.addAttribute("board", boardService.findAll());
-        if (user != null) {
-            model.addAttribute("userName", user.getName());
-        }
-        return "list";
-    }
-
     @GetMapping("/posts/save")
     public String postsSave() {
         return "posts-save";
@@ -51,4 +47,28 @@ public class IndexController {
         model.addAttribute("post", dto);
         return "posts-update";
     }
+
+
+
+    @GetMapping("/")
+    public String list(Model model, @LoginUser SessionUser user,
+                       @PageableDefault(size = 10, sort = "id", direction = Sort.Direction.ASC) Pageable pageable) {
+        model.addAttribute("board", boardService.getBoardList(pageable));
+        model.addAttribute("previous", pageable.previousOrFirst().getPageNumber());
+        model.addAttribute("next", pageable.next().getPageNumber());
+        model.addAttribute("check", boardService.getListCheck(pageable));
+
+        if (user != null) {
+            model.addAttribute("userName", user.getName());
+        }
+        return "list";
+    }
+/*
+    @GetMapping("/board/search")
+    public String search(String keyword, Model model) {
+        List<Board> searchList = boardService.search(keyword);
+        model.addAttribute("searchList", searchList);
+        return "board-search";
+    }
+*/
 }

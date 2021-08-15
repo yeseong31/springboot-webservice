@@ -1,0 +1,46 @@
+{{>layout/header}}
+
+<table class="table">
+    <thead class="thead-light">
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">시군구</th>
+        <th scope="col">번지</th>
+        <th scope="col">본번</th>
+        <th scope="col">부번</th>
+        <th scope="col">단지명</th>
+        <th scope="col">도로명</th>
+        <th scope="col">전용면적</th>
+        <th scope="col">계약년월</th>
+        <th scope="col">계약일</th>
+        <th scope="col">거래금액</th>
+        <th scope="col">층</th>
+        <th scope="col">건축년도</th>
+        <th scope="col">해제사유발생일</th>
+    </tr>
+    </thead>
+    {{#searchList}}
+        <tbody>
+        <tr>
+            <th scope="row">{{id}}</th>
+            <td>{{ccd}}</a></td>
+            <td>{{houseNum}}</td>
+            <td>{{mainNum}}</td>
+            <td>{{secondaryNum}}</td>
+            <td>{{complexName}}</a></td>
+            <td>{{roadName}}</td>
+            <td>{{dedicatedArea}}</td>
+            <td>{{contractYearMonth}}</td>
+            <td>{{contractDay}}</a></td>
+            <td>{{transactionAmount}}</td>
+            <td>{{floor}}</td>
+            <td>{{buildingYear}}</td>
+            <td>{{rrod}}</a></td>
+        </tr>
+        </tbody>
+    {{/searchList}}
+</table>
+
+{{>search/searchForm}}
+
+{{>layout/footer}}

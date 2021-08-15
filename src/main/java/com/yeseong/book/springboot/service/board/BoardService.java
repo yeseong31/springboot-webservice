@@ -6,6 +6,8 @@ import com.yeseong.book.springboot.web.dto.BoardListResponseDto;
 import com.yeseong.book.springboot.web.dto.BoardResponseDto;
 import com.yeseong.book.springboot.web.dto.BoardSaveRequestDto;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -32,6 +34,24 @@ public class BoardService {
     @Transactional(readOnly = true)
     public List<BoardListResponseDto> findAll() {
         return boardRepository.findAll().stream().map(BoardListResponseDto::new).collect(Collectors.toList());
+    }
+/*
+    // 검색
+    @Transactional
+    public List<Board> search(String keyword) {
+        return boardRepository.findByTitleContaining(keyword);
+    }
+*/
+    // 페이징 처리
+    @Transactional
+    public Page<Board> getBoardList(Pageable pageable) {
+        return boardRepository.findAll(pageable);
+    }
+    // 마지막 페이지일 경우 'Next' 버튼 비활성화
+    @Transactional
+    public Boolean getListCheck(Pageable pageable) {
+        Page<Board> saved = getBoardList(pageable);
+        return saved.hasNext();
     }
 
 }
