@@ -53,5 +53,10 @@ public class BoardService {
         Page<Board> saved = getBoardList(pageable);
         return saved.hasPrevious();
     }
+    // 검색
+    @Transactional
+    public BoardListResponseDto searchBoard(String keyword) {
+        return boardRepository.findByKeyword(keyword);
+    }
 
 }

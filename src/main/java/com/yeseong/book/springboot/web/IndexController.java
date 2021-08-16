@@ -5,6 +5,8 @@ import com.yeseong.book.springboot.config.auth.dto.SessionUser;
 import com.yeseong.book.springboot.domain.board.Board;
 import com.yeseong.book.springboot.service.board.BoardService;
 import com.yeseong.book.springboot.service.posts.PostsService;
+import com.yeseong.book.springboot.web.dto.BoardListResponseDto;
+import com.yeseong.book.springboot.web.dto.BoardResponseDto;
 import com.yeseong.book.springboot.web.dto.PostsResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Pageable;
@@ -14,6 +16,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
@@ -62,6 +65,12 @@ public class IndexController {
         if (user != null) {
             model.addAttribute("userName", user.getName());
         }
+        return "list";
+    }
+    @GetMapping("/board/search")
+    public String search(@RequestParam(value = "keyword") String keyword, Model model) {
+        BoardListResponseDto boardList = boardService.searchBoard(keyword);
+        model.addAttribute("boardList", boardList);
         return "list";
     }
 
