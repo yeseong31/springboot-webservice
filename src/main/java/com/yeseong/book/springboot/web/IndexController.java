@@ -64,12 +64,5 @@ public class IndexController {
         }
         return "list";
     }
-/*
-    @GetMapping("/board/search")
-    public String search(String keyword, Model model) {
-        List<Board> searchList = boardService.search(keyword);
-        model.addAttribute("searchList", searchList);
-        return "board-search";
-    }
-*/
+
 }

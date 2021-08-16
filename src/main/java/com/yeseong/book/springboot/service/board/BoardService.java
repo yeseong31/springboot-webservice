@@ -35,13 +35,7 @@ public class BoardService {
     public List<BoardListResponseDto> findAll() {
         return boardRepository.findAll().stream().map(BoardListResponseDto::new).collect(Collectors.toList());
     }
-/*
-    // 검색
-    @Transactional
-    public List<Board> search(String keyword) {
-        return boardRepository.findByTitleContaining(keyword);
-    }
-*/
+
     // 페이징 처리
     @Transactional
     public Page<Board> getBoardList(Pageable pageable) {
